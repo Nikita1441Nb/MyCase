@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Никита | Full-Stack Разработчик</title>
+    <!-- Подключаем современный шрифт Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #cbd5e1;
+            --heading-color: #f8fafc;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        /* Градиентный текст для имени */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: #60a5fa;
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 20px;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        header p {
+            max-width: 600px;
+            font-size: 1.05rem;
+        }
+
+        .case-study {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-study h2 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .case-role {
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--heading-color);
+            margin: 35px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Контейнер для скриншота */
+        .image-wrapper {
+            margin: 35px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            background: #0f172a; /* Темный фон на случай прозрачных краев */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block; /* Убирает отступ снизу от картинки */
+            object-fit: cover;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #334155;
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .tag:hover {
+            background: #475569;
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+
+        .features-list li {
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .features-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .features-list strong {
+            color: var(--heading-color);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        footer h2 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .case-study {
+                padding: 25px 20px;
+            }
+
+            .case-study h2 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.15rem;
+            }
+            
+            .features-list li {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Nikita1441</h1>
+        <div class="subtitle">Full-Stack Разработчик</div>
+        <br>
+        <div class="location">📍 Астана, Казахстан</div>
+        <p>Специализируюсь на создании сложных веб-сервисов, интеграциях и разработке кастомных CRM-систем, которые автоматизируют бизнес-процессы.</p>
+    </header>
+
+    <main>
+        <article class="case-study">
+            <h2>Проект: Rentify</h2>
+            <div class="case-role">Комплексная CRM-система для прокатного бизнеса</div>
+
+            <h3 class="section-title">О проекте</h3>
+            <p>Rentify — это кастомная CRM, разработанная с нуля для действующего предприятия. Весь цикл создания продукта — от проектирования UI/UX интерфейса до настройки серверов — реализован мной. Система создавалась в формате 24/7 контакта с заказчиком: требования собирались и внедрялись прямо на ходу, чтобы решить реальные боли менеджеров.</p>
+            <p>Главным фокусом была максимальная скорость обслуживания и независимость от качества интернета, поэтому ядро работает с локальной базой данных без ограничений по количеству оборудования.</p>
+
+            <!-- БЛОК С КАРТИНКОЙ -->
+            <div class="image-wrapper">
+                <img src="image.png" alt="Интерфейс CRM Rentify">
+            </div>
+
+            <h3 class="section-title">Технологический стек</h3>
+            <div class="tags">
+                <span class="tag">Python / Django</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Node.js / Electron</span>
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">UI/UX</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Gunicorn + Nginx</span>
+            </div>
+
+            <h3 class="section-title">Ключевые решения и бизнес-результат</h3>
+            <ul class="features-list">
+                <li><strong>Мгновенное обслуживание (UI/UX + Логика):</strong> Оформление одного клиента теперь занимает всего 30 секунд. Этого удалось достичь благодаря внедрению функции сканирования данных по фото и интерфейсу, который я спроектировал специально под нужды менеджеров.</li>
+                <li><strong>Автономный десктоп-клиент:</strong> Упаковка веб-интерфейса в нативное приложение через Electron и Node.js. Локальная база данных гарантирует моментальный отклик и работу без привязки к стабильности интернета.</li>
+                <li><strong>Интеграция с Telegram:</strong> Разработан бот, который берет данные из ядра CRM и регулярно отправляет выгрузки и статистику владельцу бизнеса для контроля.</li>
+                <li><strong>DevOps и Инфраструктура:</strong> Проект полностью упакован в Docker. Самостоятельно поднял и настроил VPS, развернул связку Gunicorn + Nginx, подключил домен и обеспечил безопасность веб-приложения через Cloudflare.</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <h2>Открыт к партнерству и субподряду</h2>
+        <p>Готов забирать на себя сложную техническую часть ваших проектов: бэкенд, парсеры, интеграции и кастомные CRM. Работаю по ТЗ и готовым макетам (Figma) — вы даете дизайн и логику, я отдаю рабочий продукт с надежным сервером и чистым кодом.</p>
+        <!-- ЗАМЕНИ НА СВОЙ ЮЗЕРНЕЙМ ТЕЛЕГРАМ -->
+        <a href="https://t.me/Rentify_Kz" class="contact-btn">Написать в Telegram</a>
+    </footer>
+</div>
+
+</body>
+</html>
